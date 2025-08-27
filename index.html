@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILITHA FTTH Training Website - Ward 14, Mdantsane</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #007BFF; /* Blue for reliability */
+            --secondary: #28A745; /* Green for growth */
+            --accent: #FFC107; /* Yellow for energy */
+            --background: #F8F9FA; /* Light gray */
+            --text: #333;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+        }
+        .navbar {
+            background-color: var(--primary);
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: white;
+        }
+        .section-header {
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .accordion-button {
+            background-color: var(--secondary);
+            color: white;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: var(--accent);
+            color: var(--text);
+        }
+        .card {
+            border-color: var(--primary);
+        }
+        .quiz-container {
+            margin-top: 20px;
+        }
+        #poleChart {
+            max-height: 400px;
+        }
+        .map-container {
+            height: 400px;
+            background-color: #eee; /* Placeholder for map */
+        }
+        /* Placeholder for logo if URL not available */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="#">ILITHA Telecoms</a> <!-- Placeholder logo text; replace with <img src="logo-url.png" alt="ILITHA Logo" width="150"> if URL available -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#network-works">How the Network Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#technical-architecture">Technical Architecture</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ag-zones">AG Zones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#diagram">Network Diagram</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#roles">Roles of Teams</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#troubleshooting">Troubleshooting</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#quiz">Quiz</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <!-- Introduction -->
+        <section id="introduction">
+            <h2 class="section-header">Introduction</h2>
+            <p>ILITHA is rolling out fibre optic internet in Ward 14, Mdantsane. This project uses FTTH (Fibre-to-the-Home) technology, ensuring fast, stable, and future-proof internet. This manual is designed for both sales teams and technicians to understand, sell, and maintain the network effectively.</p>
+        </section>
+
+        <!-- How the Network Works -->
+        <section id="network-works">
+            <h2 class="section-header">How the Network Works</h2>
+            <p>Think of fibre like a road system:</p>
+            <ul>
+                <li><strong>Main Feeder Cable (Highway):</strong> Carries lots of data long distances.</li>
+                <li><strong>Distribution Routes (Main Roads):</strong> Branch into neighborhoods.</li>
+                <li><strong>Poles (Streetlights):</strong> Carry fibre overhead closer to homes.</li>
+                <li><strong>Splitters (Intersections):</strong> Divide fibre into smaller lines (1 cable → 8 homes).</li>
+                <li><strong>Joints (Connection Boxes):</strong> Where cables are spliced and linked.</li>
+                <li><strong>DPs (Distribution Points):</strong> Final pole connection before fibre goes into homes.</li>
+            </ul>
+            <p>From the DP, fibre runs into the house, into an ONT, and connects to Wi-Fi routers.</p>
+        </section>
+
+        <!-- Technical Architecture -->
+        <section id="technical-architecture">
+            <h2 class="section-header">Technical Architecture</h2>
+            <div class="accordion" id="techAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Main Feeder Cable
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                        <div class="accordion-body">
+                            1x 48F aerial fibre (2800m).
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Link Feeders
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+                        <div class="accordion-body">
+                            24F aerial cables (180m, 1150m, 200m, 190m).
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more accordions for Splitters, Poles -->
+            </div>
+        </section>
+
+        <!-- AG Zones Table and Graph -->
+        <section id="ag-zones">
+            <h2 class="section-header">Aggregation Zones</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>AG Zone</th>
+                        <th>Joint</th>
+                        <th>Distribution Cables</th>
+                        <th>Poles (Approx.)</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AG36</td>
+                        <td>Joint-36</td>
+                        <td>3x cables (1230m each)</td>
+                        <td>9</td>
+                        <td>Serves P98–P99</td>
+                    </tr>
+                    <!-- Add all rows -->
+                    <tr>
+                        <td>AG45</td>
+                        <td>Joint-45</td>
+                        <td>7x cables (60–660m)</td>
+                        <td>14</td>
+                        <td>Serves P122–P125</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Poles Distribution Graph</h3>
+            <canvas id="poleChart"></canvas>
+        </section>
+
+        <!-- Network Diagram -->
+        <section id="diagram">
+            <h2 class="section-header">Network Diagram</h2>
+            <p>The diagram illustrates how fibre flows from the Feeder to Aggregation Zones (AG36–AG45), then to Poles, and finally into Homes.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Passive_optical_network.svg/800px-Passive_optical_network.svg.png" alt="FTTH Network Diagram" class="img-fluid">
+            <div class="map-container mt-4">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26484.285498480567!2d27.735334!3d-32.933333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e65a9c9a9a9a9a9%3A0x1e65a9c9a9a9a9a9!2sMdantsane%2C%20Eastern%20Cape%2C%20South%20Africa!5e0!3m2!1sen!2sus!4v1724770000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe> <!-- Mdantsane Map Embed -->
+            </div>
+        </section>
+
+        <!-- Roles of Teams -->
+        <section id="roles">
+            <h2 class="section-header">Roles of Teams</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Sales Teams</h5>
+                            <p class="card-text">Confirm coverage, explain fibre is in the street, and sell packages.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Technicians</h5>
+                            <p class="card-text">Check nearest pole, monitor splitter capacity, maintain joints, and report issues.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Troubleshooting -->
+        <section id="troubleshooting">
+            <h2 class="section-header">Troubleshooting</h2>
+            <ul>
+                <li><strong>No Connection:</strong> Check DP on nearest pole → trace to Joint.</li>
+                <li><strong>Slow Speeds:</strong> Check splitter load (1:8 rule).</li>
+                <li><strong>Broken Cable:</strong> Replace aerial fibre between poles.</li>
+                <li><strong>Power Issue:</strong> Ensure ONT at customer premises has power.</li>
+            </ul>
+        </section>
+
+        <!-- Quiz -->
+        <section id="quiz">
+            <h2 class="section-header">Knowledge Quiz</h2>
+            <div class="quiz-container">
+                <p>What is the splitter ratio?</p>
+                <button class="btn btn-primary" onclick="checkAnswer('1:8')">1:8</button>
+                <button class="btn btn-secondary" onclick="checkAnswer('1:16')">1:16</button>
+                <p id="quizResult"></p>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Pole Chart
+        const ctx = document.getElementById('poleChart').getContext('2d');
+        const poleChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['AG36', 'AG37', 'AG38', 'AG39', 'AG40', 'AG41', 'AG42', 'AG43', 'AG44', 'AG45'],
+                datasets: [{
+                    label: 'Approx. Poles',
+                    data: [9, 8, 6, 12, 10, 6, 9, 8, 6, 14],
+                    backgroundColor: 'rgba(40, 167, 69, 0.7)', // Green
+                    borderColor: 'rgba(40, 167, 69, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Quiz Function
+        function checkAnswer(answer) {
+            const result = document.getElementById('quizResult');
+            if (answer === '1:8') {
+                result.textContent = 'Correct! The splitter ratio is 1:8.';
+                result.style.color = 'green';
+            } else {
+                result.textContent = 'Incorrect. Try again!';
+                result.style.color = 'red';
+            }
+        }
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=RazNT/ilitha-ward-14-training-manual" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
