@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         .gradient-bg {
-            background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+            background: linear-gradient(135deg, #0056b3 0%, #003366 100%);
         }
         .network-diagram {
             transition: all 0.3s ease;
@@ -35,12 +35,15 @@
 </head>
 <body class="font-sans bg-gray-50">
     <!-- Header -->
-    <header class="gradient-bg text-white shadow-lg">
-        <div class="container mx-auto px-4 py-6">
+    <header class="bg-[#0056b3] text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <h1 class="text-2xl md:text-3xl font-bold">ILITHA FTTH Training</h1>
-                    <p class="text-blue-100">Ward 14, Mdantsane</p>
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="https://ilitha.com/wp-content/uploads/2022/10/Ilitha-logo-white-300x53.png" alt="Ilitha Logo" class="h-12 mr-4">
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-bold">ILITHA FTTH Training</h1>
+                        <p class="text-blue-100">Ward 14, Mdantsane</p>
+                    </div>
                 </div>
                 <nav>
                     <ul class="flex space-x-4 font-medium">
@@ -206,14 +209,14 @@
             
             <div class="grid md:grid-cols-2 gap-8 mb-12">
                 <!-- Sales Team Card -->
-                <div class="bg-blue-50 rounded-xl p-6 shadow-md border-l-4 border-blue-500">
+                <div class="bg-blue-50 rounded-xl p-6 shadow-md border-l-4 border-[#0056b3]">
                     <div class="flex items-center mb-4">
                         <div class="bg-blue-100 p-3 rounded-full mr-4">
-                            <i class="fas fa-users text-blue-600 text-xl"></i>
+                            <i class="fas fa-users text-[#0056b3] text-xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold">Sales Teams</h3>
+                        <h3 class="text-xl font-semibold">Sales Teams Guide</h3>
                     </div>
-                    <ul class="space-y-3">
+                    <ul class="space-y-3 mb-6">
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
                             <span>Confirm coverage in specific areas</span>
@@ -227,30 +230,145 @@
                             <span>Highlight benefits of the available packages</span>
                         </li>
                     </ul>
+
+                    <div class="mt-6">
+                        <h4 class="font-semibold text-lg mb-3 text-[#0056b3]">Recommended Packages</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-lg border border-blue-200">
+                                <div class="font-bold text-lg mb-2 flex justify-between">
+                                    <span>Home Basic</span>
+                                    <span class="text-[#0056b3]">R399/month</span>
+                                </div>
+                                <ul class="text-sm space-y-1">
+                                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 10Mbps download</li>
+                                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 5Mbps upload</li>
+                                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Free installation</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-blue-200">
+                                <div class="font-bold text-lg mb-2 flex justify-between">
+                                    <span>Home Plus</span>
+                                    <span class="text-[#0056b3]">R599/month</span>
+                                </div>
+                                <ul class="text-sm space-y-1">
+                                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 25Mbps download</li>
+                                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 10Mbps upload</li>
+                                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Free installation</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-blue-200">
+                                <div class="font-bold text-lg mb-2 flex justify-between">
+                                    <span>Home Premium</span>
+                                    <span class="text-[#0056b3]">R899/month</span>
+                                </div>
+                                <ul class="text-sm space-y-1">
+                                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 50Mbps download</li>
+                                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 25Mbps upload</li>
+                                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Free installation + router</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-blue-200">
+                                <div class="font-bold text-lg mb-2 flex justify-between">
+                                    <span>Business Pro</span>
+                                    <span class="text-[#0056b3]">R1499/month</span>
+                                </div>
+                                <ul class="text-sm space-y-1">
+                                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 100Mbps download</li>
+                                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 50Mbps upload</li>
+                                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Free installation + static IP</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-[#f8fafc] p-4 rounded-lg">
+                        <h4 class="font-semibold text-lg mb-2 text-[#0056b3]">Sales Talking Points</h4>
+                        <ul class="list-disc pl-5 space-y-2 text-sm">
+                            <li>"Our fibre network is built for reliability with 99.9% uptime"</li>
+                            <li>"No throttling - get the full speeds you pay for 24/7"</li>
+                            <li>"Local support team based in Mdantsane for quick resolution"</li>
+                            <li>"Future-proof technology that can scale as your needs grow"</li>
+                        </ul>
+                    </div>
                 </div>
                 
                 <!-- Technicians Card -->
-                <div class="bg-green-50 rounded-xl p-6 shadow-md border-l-4 border-green-500">
+                <div class="bg-green-50 rounded-xl p-6 shadow-md border-l-4 border-[#22c55e]">
                     <div class="flex items-center mb-4">
                         <div class="bg-green-100 p-3 rounded-full mr-4">
-                            <i class="fas fa-tools text-green-600 text-xl"></i>
+                            <i class="fas fa-tools text-[#22c55e] text-xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold">Technicians</h3>
+                        <h3 class="text-xl font-semibold">Field Technician Handbook</h3>
                     </div>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Check the nearest pole to the customer</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Monitor splitter capacity (1:8 rule)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Maintain joints and report issues</span>
-                        </li>
-                    </ul>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-medium text-lg mb-2 text-[#047857]">Installation Protocol</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Always verify pole ID matches work order</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Document fibre routing with photos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Test speed with Ookla before leaving</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-lg mb-2 text-[#047857]">Safety Procedures</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Wear hi-vis vest and helmet at all times</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Use harness when working above 2m height</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Check weather conditions before climbing</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-lg mb-2 text-[#047857]">Equipment Standards</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Use only Ilitha-approved ONTs</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Maintain bend radius >5cm on fibre cables</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Seal all enclosure gaskets properly</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-lg mb-2 text-[#047857]">Testing Procedures</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Check light levels at ONT (-27dBm to -8dBm)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Document speed test results on work order</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Verify customer WiFi credentials</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 
